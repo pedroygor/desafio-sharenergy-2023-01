@@ -1,10 +1,28 @@
-import { ChangeEvent, useState } from "react"
-import { RememberMeLogin } from "../components/RememberMeLogin";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
+
+type Login = {
+  username: string,
+  password: string
+};
 
 export function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const json = localStorage.getItem('login');
+    let login: Login = json && JSON.parse(json);
+
+    if (login) {
+      const { username, password } = login;
+      setUsername(username);
+      setPassword(password);
+    }
+  }, [])
+
 
   const handleInputUsername = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -14,8 +32,42 @@ export function Login() {
     setPassword(e.target.value);
   }
 
+  const handleInput = () => {
+    setIsChecked(!isChecked);
+  }
+
+  const handleClick = (e: MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault()
+
+    const isLoginValid = validateUsername() && validatePassword();
+    if (isLoginValid && isChecked) {
+      const login: Login = {
+        username,
+        password
+      }
+      localStorage.setItem('login', JSON.stringify(login));
+    }
+
+    if (isLoginValid) {
+      navigate('/generator')
+    }
+
+  }
+
+  const validateUsername = () => {
+    const isUsernameValid = username === 'desafiosharenergy';
+
+    return isUsernameValid;
+  }
+
+  const validatePassword = () => {
+    const isPasswordValid = password === 'sh@r3n3rgy';
+
+    return isPasswordValid;
+  }
+
   return (
-    <div>
+    <>
       <form action="">
         <input
           type="text"
@@ -36,13 +88,23 @@ export function Login() {
         />
         <button
           type="submit"
-          disabled={isDisabled}
+          disabled={!username || !password}
+          onClick={handleClick}
         >
           Entrar
         </button>
       </form>
-      <RememberMeLogin />
-    </div >
+      <label htmlFor="rememberMe">
+        <span>Lembrar de mim</span>
+        <input
+          type="checkbox"
+          name="rememberMe"
+          id="rememberMe"
+          onChange={handleInput}
+          checked={isChecked}
+        />
+      </label>
+    </>
   )
 
 }

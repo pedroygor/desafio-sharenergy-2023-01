@@ -6,50 +6,60 @@ import {
   ListItemAvatar,
   ListItemText,
   Pagination,
-  PaginationItem,
   Typography
 } from "@mui/material";
 import usePagination from "../hooks/pagination";
 import { useEffect, useState } from "react"
 import getUserGenerator from "../services/APIUserGenerator";
-
-export interface Users {
-  email: string
-  picture: {
-    large: string
-  },
-  name: {
-    title: string,
-    first: string,
-    last: string
-  },
-  login: {
-    uuid: string,
-    username: string
-  },
-  registered: {
-    age: number
-  }
-
-}
+import { IUserAPI } from "../interface/IUserAPI";
+import SearchUser from "../components/SearchUser";
 
 export default function UserGenerator() {
   const PER_PAGE = 10;
-  const IUsers: Users[] = [];
-  const [users, setUsers] = useState(IUsers);
+
+  const [users, setUsers] = useState<IUserAPI[]>([]);
+  const [usersFiltered, setUsersFiltered] = useState<IUserAPI[]>([]);
   const [page, setPage] = useState(1);
-  const _DATA = usePagination(users, PER_PAGE);
-  const count = Math.ceil(users.length / PER_PAGE);
+  const [inputText, setInputText] = useState('');
+  const [optionsSearch, setOptionsSearch] = useState('nome');
+
+
+  const _DATA = usePagination(usersFiltered, PER_PAGE);
+  const count = Math.ceil(usersFiltered.length / PER_PAGE);
+
 
   useEffect(() => {
     const fetchUserGenerator = async () => {
       const userGenerator = await getUserGenerator();
       setUsers(userGenerator);
-      console.log(userGenerator);
-
     }
     fetchUserGenerator();
   }, []);
+
+  useEffect(() => {
+    const filteredUsers = () => {
+      const inputTextLowerCase = inputText.toLocaleLowerCase();
+      const userFilter = users;
+
+      const newUsersFiltered = userFilter.filter(({ name, login, email }) => {
+        if (optionsSearch === 'name') {
+          const fullName = name.first.toLocaleLowerCase() + name.last.toLocaleLowerCase();
+          return fullName.includes(inputTextLowerCase);
+        }
+        else if (optionsSearch === 'username') {
+          const usernameLowerCase = login.username.toLocaleLowerCase();
+          return usernameLowerCase.includes(inputTextLowerCase);
+        }
+        else {
+          const emailLowerCase = email.toLocaleLowerCase();
+          return emailLowerCase.includes(inputTextLowerCase);
+        }
+      });
+      setUsersFiltered(newUsersFiltered);
+    }
+
+    filteredUsers()
+  }, [inputText, optionsSearch])
 
   const handleChange = (_e: any, p: number) => {
     setPage(p);
@@ -58,6 +68,13 @@ export default function UserGenerator() {
 
   return (
     <div>
+      <SearchUser
+        inputText={inputText}
+        setInputText={setInputText}
+        optionsSearch={optionsSearch}
+        setOptionsSearch={setOptionsSearch}
+      />
+
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
         {_DATA.currentData().map((user) => (
           <div key={user.login.uuid}>

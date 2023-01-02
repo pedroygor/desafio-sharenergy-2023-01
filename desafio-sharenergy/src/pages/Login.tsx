@@ -54,17 +54,9 @@ export function Login() {
 
   }
 
-  const validateUsername = () => {
-    const isUsernameValid = username === 'desafiosharenergy';
+  const validateUsername = (): boolean => username === 'desafiosharenergy';
 
-    return isUsernameValid;
-  }
-
-  const validatePassword = () => {
-    const isPasswordValid = password === 'sh@r3n3rgy';
-
-    return isPasswordValid;
-  }
+  const validatePassword = (): boolean => password === 'sh@r3n3rgy';
 
   return (
     <>

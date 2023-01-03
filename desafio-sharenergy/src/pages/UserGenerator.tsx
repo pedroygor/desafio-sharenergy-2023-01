@@ -21,7 +21,7 @@ export default function UserGenerator() {
   const [usersFiltered, setUsersFiltered] = useState<IUserAPI[]>([]);
   const [page, setPage] = useState(1);
   const [inputText, setInputText] = useState('');
-  const [optionsSearch, setOptionsSearch] = useState('nome');
+  const [optionsSearch, setOptionsSearch] = useState('name');
 
 
   const _DATA = usePagination(usersFiltered, PER_PAGE);
@@ -32,9 +32,18 @@ export default function UserGenerator() {
     const fetchUserGenerator = async () => {
       const userGenerator = await getUserGenerator();
       setUsers(userGenerator);
+      setUsersFiltered(userGenerator);
     }
     fetchUserGenerator();
   }, []);
+
+  // useEffect(() => {
+  //   const updateUsersFiltered = () => {
+  //     setUsersFiltered(users);
+  //   }
+
+  //   updateUsersFiltered();
+  // }, [users]);
 
   useEffect(() => {
     const filteredUsers = () => {
@@ -50,10 +59,11 @@ export default function UserGenerator() {
           const usernameLowerCase = login.username.toLocaleLowerCase();
           return usernameLowerCase.includes(inputTextLowerCase);
         }
-        else {
+        else if (optionsSearch === 'email') {
           const emailLowerCase = email.toLocaleLowerCase();
           return emailLowerCase.includes(inputTextLowerCase);
         }
+        return users;
       });
       setUsersFiltered(newUsersFiltered);
     }

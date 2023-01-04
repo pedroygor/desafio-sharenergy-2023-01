@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--white-100);
+  color: var(--gray-900);
+}
+
+.containerLogin {
+  width: 50%;
+  background-color: var(--green-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerLogin > div {
+  width: 500px;
+  height: 400px;
+  background-color: var(--white-100);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.containerLogin h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--gray-900);
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.containerLogin form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.containerLogin form input {
+  width: 20rem;
+  height: 40px;
+  outline: none;
+  padding-left: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  color: var(--gray-600);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--green-300);
+}
+
+.containerLogin button {
+  width: 20rem;
+  height: 40px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: var(--green-300);
+  color: var(--white);
+  transition: all, 0.3s;
+}
+
+.containerLogin button:hover {
+  background-color: var(--green-500);
+  cursor: pointer;
+}
+
+.containerLogin input,
+.containerLogin button {
+  border-radius: 4px;
+}
+
+.containerLogin input:focus {
+  outline: transparent;
+  border-bottom: 2px solid var(--green-300);
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rememberMe span {
+  color: var(--gray-600);
+  font-size: 1rem;
+  font-style: italic;
+  transition: all, 0.3s;
+}
+
+.rememberMe span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.containerSecondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerSecondary > div {
+  width: 400px;
+  height: 400px;
+}
+
+.containerSecondary img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}

@@ -37,14 +37,6 @@ export default function UserGenerator() {
     fetchUserGenerator();
   }, []);
 
-  // useEffect(() => {
-  //   const updateUsersFiltered = () => {
-  //     setUsersFiltered(users);
-  //   }
-
-  //   updateUsersFiltered();
-  // }, [users]);
-
   useEffect(() => {
     const filteredUsers = () => {
       const inputTextLowerCase = inputText.toLocaleLowerCase();

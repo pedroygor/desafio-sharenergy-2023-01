@@ -38,7 +38,7 @@ export default function StatusCodeCat() {
       </div>
       <div>
         <h2>{title}</h2>
-        <img src={image} alt="" style={{ width: '400px' }} />
+        <img src={image} style={{ width: '400px' }} />
       </div>
     </div>
   )

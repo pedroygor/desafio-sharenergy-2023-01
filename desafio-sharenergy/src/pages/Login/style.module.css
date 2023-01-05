@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: var(--white-100);
   color: var(--gray-900);
+  overflow-y: auto;
 }
 
 .containerLogin {
@@ -14,8 +15,8 @@
 }
 
 .containerLogin > div {
-  width: 500px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
   background-color: var(--white-100);
   border-radius: 8px;
   display: flex;
@@ -38,17 +39,30 @@
   gap: 1.5rem;
 }
 
-.containerLogin form {
+.containerLogin .formLogin form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.formLogin form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.formLogin form > div > p {
+  color: var(--red-500);
+  font-size: 0.9rem;
 }
 
 .containerLogin form input {
   width: 20rem;
-  height: 40px;
+  height: 2.5rem;
   outline: none;
   padding-left: 0.5rem;
   border: none;
@@ -60,7 +74,7 @@
 
 .containerLogin button {
   width: 20rem;
-  height: 40px;
+  height: 2.5rem;
   outline: none;
   border: none;
   font-size: 1rem;
@@ -69,7 +83,12 @@
   transition: all, 0.3s;
 }
 
-.containerLogin button:hover {
+.containerLogin button:disabled {
+  opacity: 0.8;
+}
+
+.containerLogin button:hover,
+button:not(:disabled) {
   background-color: var(--green-500);
   cursor: pointer;
 }
@@ -106,14 +125,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 .containerSecondary > div {
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
 }
 
 .containerSecondary img {
   display: block;
   margin: 0 auto;
   width: 50%;
+}
+
+.containerInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 260px) and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .containerLogin {
+    width: 100%;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .containerLogin > div {
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .containerLogin form input,
+  .containerLogin form button {
+    width: 100%;
+  }
+
+  .containerSecondary {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .containerLogin > div {
+    width: 90%;
+  }
+  .containerLogin form input,
+  .containerLogin form button {
+    width: 100%;
+  }
+
+  .containerSecondary {
+    width: 50%;
+  }
 }

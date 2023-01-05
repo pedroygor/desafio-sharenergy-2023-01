@@ -12,6 +12,7 @@ type Login = {
 export function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoginInvalid, setIsLoginInvalid] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
 
@@ -52,8 +53,11 @@ export function Login() {
     }
 
     if (isLoginValid) {
-      navigate('/generator')
+      navigate('/generator');
+    } else {
+      setIsLoginInvalid(true);
     }
+
 
   }
 
@@ -67,24 +71,30 @@ export function Login() {
         <div>
           <h2>Desafio Sharenergy</h2>
           <div className={styles.formLogin}>
-            <form action="#" className={styles.formLogin}>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                placeholder="username"
-                onChange={handleInputUsername}
-                value={username}
-              />
+            <form action="#">
+              <div>
+                <div className={styles.containerInputs}>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="username"
+                    onChange={handleInputUsername}
+                    value={username}
+                  />
 
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="senha"
-                onChange={handleInputPassword}
-                value={password}
-              />
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="senha"
+                    onChange={handleInputPassword}
+                    value={password}
+                  />
+                </div>
+                {isLoginInvalid && <p>username e/ou senha inválidos</p>}
+              </div>
+
               <button
                 type="submit"
                 disabled={!username || !password}
@@ -93,6 +103,7 @@ export function Login() {
                 Entrar
               </button>
             </form>
+
             <label htmlFor="rememberMe" className={styles.rememberMe}>
               <span>Lembrar de mim</span>
               <input

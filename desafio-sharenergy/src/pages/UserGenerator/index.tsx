@@ -55,7 +55,7 @@ export default function UserGenerator() {
           return usernameLowerCase.includes(inputTextLowerCase);
         }
         else if (optionsSearch === 'email') {
-          const emailLowerCase = email.toLocaleLowerCase();
+          const emailLowerCase: string = email.toLocaleLowerCase();
           return emailLowerCase.includes(inputTextLowerCase);
         }
         return users;
@@ -72,9 +72,9 @@ export default function UserGenerator() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
-      <div className={styles.container}>
+      <div className={styles.content}>
         <SearchUser
           inputText={inputText}
           setInputText={setInputText}
@@ -84,7 +84,7 @@ export default function UserGenerator() {
 
         <List className={styles.list} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
           {_DATA.currentData().map((user) => (
-            <div key={user.login.uuid}>
+            <div key={user.login.uuid} className={styles.divList}>
               <ListItem alignItems="center">
                 <ListItemAvatar>
                   <Avatar src={user.picture.large} />
@@ -126,6 +126,7 @@ export default function UserGenerator() {
           variant="outlined"
           shape="rounded"
           onChange={handleChange}
+          className={styles.pagination}
         />
       </div>
     </div >

@@ -1,4 +1,7 @@
-import { ChangeEvent, Dispatch, SetStateAction } from "react"
+import { style } from "@mui/system";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
+
+import styles from './style.module.css';
 
 interface IProps {
   inputText: string,
@@ -19,7 +22,7 @@ export default function SearchUser(
   }
 
   return (
-    <div>
+    <div className={styles.containerInputs}>
       <input
         type="text"
         name="search"
@@ -28,17 +31,18 @@ export default function SearchUser(
         value={inputText}
         onChange={handleInput}
       />
-
-      <select
-        name="optionSearch"
-        id="optionSearch"
-        value={optionsSearch}
-        onChange={handleOptionsSearch}
-      >
-        <option value="name">nome</option>
-        <option value="username">username</option>
-        <option value="email">email</option>
-      </select>
+      <div>
+        <select
+          name="optionSearch"
+          id="optionSearch"
+          value={optionsSearch}
+          onChange={handleOptionsSearch}
+        >
+          <option value="name">nome</option>
+          <option value="username">username</option>
+          <option value="email">email</option>
+        </select>
+      </div>
     </div>
   )
 }

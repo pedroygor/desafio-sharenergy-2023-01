@@ -15,6 +15,8 @@ import { IUserAPI } from "../../interface/IUserAPI";
 import SearchUser from "../../components/SearchUser";
 import Header from "../../components/Header";
 
+import styles from './style.module.css';
+
 export default function UserGenerator() {
   const PER_PAGE = 10;
 
@@ -72,58 +74,60 @@ export default function UserGenerator() {
   return (
     <div>
       <Header />
-      <SearchUser
-        inputText={inputText}
-        setInputText={setInputText}
-        optionsSearch={optionsSearch}
-        setOptionsSearch={setOptionsSearch}
-      />
+      <div className={styles.container}>
+        <SearchUser
+          inputText={inputText}
+          setInputText={setInputText}
+          optionsSearch={optionsSearch}
+          setOptionsSearch={setOptionsSearch}
+        />
 
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        {_DATA.currentData().map((user) => (
-          <div key={user.login.uuid}>
-            <ListItem alignItems="center">
-              <ListItemAvatar>
-                <Avatar src={user.picture.large} />
-              </ListItemAvatar>
-              <ListItemText
-                primary={`${user.name.first} ${user.name.last}`}
-                secondary={
-                  <>
-                    <Typography
-                      sx={{ display: 'inline' }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      {`username: ${user.login.username}`}
+        <List className={styles.list} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+          {_DATA.currentData().map((user) => (
+            <div key={user.login.uuid}>
+              <ListItem alignItems="center">
+                <ListItemAvatar>
+                  <Avatar src={user.picture.large} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={`${user.name.first} ${user.name.last}`}
+                  secondary={
+                    <>
+                      <Typography
+                        sx={{ display: 'inline' }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {`username: ${user.login.username}`}
 
-                    </Typography>
-                    <Typography
-                      sx={{ display: 'block' }}
-                      component="span"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      {`age: ${user.registered.age}`}
-                    </Typography>
-                    {user.email}
+                      </Typography>
+                      <Typography
+                        sx={{ display: 'block' }}
+                        component="span"
+                        variant="body2"
+                        color="text.secondary"
+                      >
+                        {`age: ${user.registered.age}`}
+                      </Typography>
+                      {user.email}
 
-                  </>} />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-          </div>
+                    </>} />
+              </ListItem>
+              <Divider variant="inset" component="li" />
+            </div>
 
-        ))}
-      </List>
-      <Pagination
-        count={count}
-        size="large"
-        page={page}
-        variant="outlined"
-        shape="rounded"
-        onChange={handleChange}
-      />
+          ))}
+        </List>
+        <Pagination
+          count={count}
+          size="large"
+          page={page}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChange}
+        />
+      </div>
     </div >
   )
 }

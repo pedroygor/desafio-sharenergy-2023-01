@@ -1,0 +1,14 @@
+.menu {
+  display: none;
+}
+
+@media screen and (min-width: 260px) and (max-width: 600px) {
+  .menu {
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--gray-700);
+  }
+}

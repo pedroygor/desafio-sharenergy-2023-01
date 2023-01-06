@@ -87,10 +87,14 @@
   opacity: 0.8;
 }
 
-.containerLogin button:hover,
-button:not(:disabled) {
+.containerLogin button:hover {
   background-color: var(--green-500);
   cursor: pointer;
+}
+
+.containerLogin button:disabled:hover {
+  cursor: not-allowed;
+  background-color: var(--green-300);
 }
 
 .containerLogin input,

@@ -8,11 +8,12 @@ import {
   Pagination,
   Typography
 } from "@mui/material";
-import usePagination from "../hooks/pagination";
+import usePagination from "../../hooks/pagination";
 import { useEffect, useState } from "react"
-import getUserGenerator from "../services/APIUserGenerator";
-import { IUserAPI } from "../interface/IUserAPI";
-import SearchUser from "../components/SearchUser";
+import getUserGenerator from "../../services/APIUserGenerator";
+import { IUserAPI } from "../../interface/IUserAPI";
+import SearchUser from "../../components/SearchUser";
+import Header from "../../components/Header";
 
 export default function UserGenerator() {
   const PER_PAGE = 10;
@@ -70,6 +71,7 @@ export default function UserGenerator() {
 
   return (
     <div>
+      <Header />
       <SearchUser
         inputText={inputText}
         setInputText={setInputText}

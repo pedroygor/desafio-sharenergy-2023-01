@@ -1,0 +1,42 @@
+.containerImage {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerImage div {
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.containerImage button {
+  border: none;
+  margin-top: 1rem;
+  background-color: var(--green-300);
+  padding: 0.5rem 2rem;
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.containerImage button:hover {
+  background-color: var(--green-500);
+}
+
+.containerImage img {
+  max-width: 25rem;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.title {
+  text-align: center;
+  color: var(--green-300);
+  font-size: 2rem;
+  font-weight: 700;
+}

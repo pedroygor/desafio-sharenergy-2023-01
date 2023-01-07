@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
-import getRandomDogs from "../services/APIRandomDog";
+import Header from "../../components/Header";
+import getRandomDogs from "../../services/APIRandomDog";
+
+import styles from './style.module.css';
 
 export default function RandomDog() {
   const [imgDogs, setImgDogs] = useState<string[]>([]);
@@ -30,14 +33,14 @@ export default function RandomDog() {
   }
 
   return (
-    <div>
-      <h1>Random Dog</h1>
-      <section>
+    <div className={styles.container}>
+      <Header />
+      <h1 className={styles.title}>Random Dog</h1>
+      <section className={styles.containerImage}>
         <div>
           <img
             src={`https://random.dog/${currentImage}`}
             alt="dog-img"
-            style={{ width: '400px', height: '400px' }}
           />
         </div>
         <button type="button" onClick={handleClick} >Refresh</button>

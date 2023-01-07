@@ -5,6 +5,7 @@
   height: 5rem;
   padding: 1rem;
   background-color: var(--green-300);
+  width: 100%;
 }
 
 .header h1 {

@@ -47,7 +47,7 @@ export default function BasicMenu() {
           <Link to="/randomDog">Random Dogs</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to="/">Link</Link>
+          <Link to="/">Clientes</Link>
         </MenuItem>
       </Menu>
     </div>

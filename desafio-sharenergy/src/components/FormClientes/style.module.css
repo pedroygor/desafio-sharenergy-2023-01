@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.4rem;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.containerContentInputs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.containerContentInputs input {
+  padding: 0.4rem;
+  min-width: 10rem;
+  border: none;
+  border-bottom: 1px solid var(--green-300);
+  outline: none;
+  font-size: 1rem;
+  color: var(--gray-600);
+  background-color: var(--white);
+  margin-top: 0.4rem;
+}
+
+.containerContentInputs input:focus {
+  border-bottom: 2px solid var(--green-300);
+}
+
+.inputAge {
+  min-width: 5rem;
+}
+
+.cpfAndAge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.inputSubmit {
+  width: 10rem;
+  padding: 0.4rem;
+  margin: 0.5rem auto;
+  background-color: var(--green-500);
+  color: var(--white);
+  border: none;
+}
+
+.alert {
+  color: var(--red-500);
+  font-size: 1rem;
+  font-style: italic;
+}

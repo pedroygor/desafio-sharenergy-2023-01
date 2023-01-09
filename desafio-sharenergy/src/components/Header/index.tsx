@@ -13,7 +13,7 @@ export default function Header() {
           <Link to="/generator">User Generator</Link>
           <Link to="/statusCode">HTTP Cat</Link>
           <Link to="/randomDog">Random Dogs</Link>
-          <Link to="/">4 page</Link>
+          <Link to="/clientes">Clientes</Link>
         </div>
 
       </nav>

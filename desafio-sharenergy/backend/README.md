@@ -36,7 +36,7 @@ $ npm run start:prod
 
 **Front-end:** React, Typescript, Jotai, React Hook Form, Phosphor-react, Material UI e Axios
 
-**Back-end:** Node, NestJS, MogoDB, Mongoose e Swagger
+**Back-end:** Node, NestJS, MongoDB, Mongoose e Swagger
 
 ## Documentação da API
 

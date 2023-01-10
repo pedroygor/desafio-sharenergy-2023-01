@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-import FormClientes from "../../components/FormClientes";
+import { atom } from "jotai";
 import Header from "../../components/Header";
 import OptionsClient from "../../components/OptionsClient";
-import { fetchClientes } from "../../services/APIClientes";
 
 import styles from './style.module.css';
+import { IClient } from "../../services/APIClientes";
+
+export const clienteAtom = atom<IClient>({} as IClient);
 
 export default function Clientes() {
   return (

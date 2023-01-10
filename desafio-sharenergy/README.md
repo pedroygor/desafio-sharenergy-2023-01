@@ -40,7 +40,7 @@ Este projeto trata-se de um desafio proposto no processo seletivo da empresa Sha
 1.Clone Repositório
 
 - Use o comando: `git clone git@github.com:pedroygor/desafio-sharenergy-2023-01.git`.
-- Entre na pasta do repositório que você acabou de clonar: `cd desafio-sharenergy-2023-01`
+- Entre na pasta do repositório que você acabou de clonar: `cd desafio-sharenergy-2023-01/desafio-sharenergy`
 
   2.Instale as dependências
 

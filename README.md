@@ -1,3 +1,59 @@
+## Instalação
+
+Instale a aplicação
+
+> Primeiro Passo
+
+```bash
+# Clonar Projeto
+$ git clone git@github.com:pedroygor/desafio-sharenergy-2023-01.git
+
+# Entrar no diretório
+$ cd desafio-sharenergy-2023-01/desafio-sharenergy
+```
+
+> Frontend
+
+```bash
+# Instalar as dependências
+$ npm install
+
+# Inicializar a aplicação
+$ npm run dev
+```
+
+Porta do Frontend - [http://localhost:5173](http://localhost:5173)
+
+> Backend
+
+```bash
+# Entrar no diretório de backend
+$ cd backend 
+
+# Instalar dependências
+$ npm install
+
+## Inicializar a aplicação
+
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+Porta do Backend - [http://localhost:3000](http://localhost:3000)  
+Porta da Documentação do Swagger - [http://localhost:3000/api](http://localhost:3000/api)
+
+## Youtube
+
+> Video de aprensentação do projeto
+
+[![IMAGE ALT TEXT HERE](https://i.ytimg.com/an_webp/kJVLuV6VdvM/mqdefault_6s.webp?du=3000&sqp=CIr59p0G&rs=AOn4CLCyIpcLFY35Vv74W9JVUNdTk__Z_w)](https://www.youtube.com/watch?v=kJVLuV6VdvM)
+
 # Desafio para o processo seletivo SHARENERGY 2023/01
 
 Repositório destinado aos interessados em participar do processo seletivo da SHARENERGY 2023/01. As vagas são voltadas para desenvolvimento de aplicações Web e Mobile.
@@ -65,14 +121,14 @@ A aplicação criada para o desafio pode ser aprimorada com recursos pensados po
 
 ### Mas, afinal, quais ferramentas a Sharenergy utiliza?
 
-* [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) e [Typescript](https://www.typescriptlang.org/)
-* Front-end: [ReactJS](https://reactjs.org/) e [React Native](https://reactnative.dev/)
-* Back-end: [Node.js](https://nodejs.org/en/), [NestJS](https://nestjs.com/) e [Go](https://golang.org/)
-* Banco de dados: [MongoDB](https://www.mongodb.com/) do lado do servidor e [Minimongo](https://guide.meteor.com/collections.html) do lado do cliente (cache)
-* Gerenciamento de Containers: [Docker](https://www.docker.com/)
-* Gerenciamento de Repositórios: [NX](https://nx.dev/)
-* UI: [Tailwind CSS](https://tailwindcss.com/) e [Material-UI V4](https://v4.mui.com/)
-* Sistema Operacional (principal): [Linux](https://www.linux.org/), também sendo possível utilizar o [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) (WSL)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) e [Typescript](https://www.typescriptlang.org/)
+- Front-end: [ReactJS](https://reactjs.org/) e [React Native](https://reactnative.dev/)
+- Back-end: [Node.js](https://nodejs.org/en/), [NestJS](https://nestjs.com/) e [Go](https://golang.org/)
+- Banco de dados: [MongoDB](https://www.mongodb.com/) do lado do servidor e [Minimongo](https://guide.meteor.com/collections.html) do lado do cliente (cache)
+- Gerenciamento de Containers: [Docker](https://www.docker.com/)
+- Gerenciamento de Repositórios: [NX](https://nx.dev/)
+- UI: [Tailwind CSS](https://tailwindcss.com/) e [Material-UI V4](https://v4.mui.com/)
+- Sistema Operacional (principal): [Linux](https://www.linux.org/), também sendo possível utilizar o [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) (WSL)
 
 ## O que devo entregar?
 

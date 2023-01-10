@@ -15,8 +15,8 @@ API de Clientes que permite Criar, Atualizar, Buscar e Remover.
 Instale o backend com npm
 
 ```bash
-  npm install backend
   cd backend
+  npm install
 ```
 
 ### Rodando o backend

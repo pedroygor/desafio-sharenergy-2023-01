@@ -52,7 +52,9 @@ Porta da Documentação do Swagger - [http://localhost:3000/api](http://localhos
 
 > Video de aprensentação do projeto
 
-[![IMAGE ALT TEXT HERE](https://i.ytimg.com/an_webp/kJVLuV6VdvM/mqdefault_6s.webp?du=3000&sqp=CIr59p0G&rs=AOn4CLCyIpcLFY35Vv74W9JVUNdTk__Z_w)](https://www.youtube.com/watch?v=kJVLuV6VdvM)
+[![IMAGE ALT TEXT HERE](https://i9.ytimg.com/vi_webp/juP__nT-wfU/mq1.webp?sqp=CPzw950G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGA8gZShKMA8=&rs=AOn4CLBfikjrd5IfAijrCctxKy2ssR9HsA)](https://youtu.be/juP__nT-wfU)
+
+[URL do vídeo](https://youtu.be/juP__nT-wfU)
 
 # Desafio para o processo seletivo SHARENERGY 2023/01
 

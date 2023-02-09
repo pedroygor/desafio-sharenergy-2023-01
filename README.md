@@ -52,7 +52,4 @@ $ npm run start:prod
 Porta do Backend - [http://localhost:3000](http://localhost:3000)  
 Porta da Documentação do Swagger - [http://localhost:3000/api](http://localhost:3000/api)
 
-## Youtube
-
-[URL do vídeo](https://youtu.be/lO-GeI3t9zU)
 
